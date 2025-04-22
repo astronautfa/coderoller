@@ -10,6 +10,7 @@ Coderoller is a Python utility that flattens a source code repository into a sin
 
 - **Flattens source code repositories** into a single markdown file.
 - **Supports multiple file types** including `.py`, `.js`, `.jsx`, `.ts`, `.tsx`, `.swift`, `.go`, `.java`, `.c`, `.cpp`, `.h`, `.hpp`, `.cs`, `.lua`, `.rb`, `.php`, `.pl`, `.html`, `.css`, `.json`, `.toml`, `.md`, `.yaml`, `.yml`, `.conf`, `.ini`, and `.sh`.
+- **Interactive mode** for selecting specific files and directories to include in the flattened output.
 - **Automatically includes README** files if present, placing it at the start of the flattened file.
 - **Excludes hidden files and directories** (those starting with a dot), specific directories (`build`, `dist`, `node_modules`, `__pycache__`), specific files (lockfiles, hidden files, other flattened files, etc.), and any paths specified in `.gitignore`.
 - **Supports flattening directly from Git URLs** even if the repository is not cloned locally.
@@ -46,6 +47,25 @@ To show only the folder structure without file contents:
 ```bash
 coderoller-flatten-repo /path/to/reponame --structure-only
 ```
+
+To use the interactive mode for selecting which files and directories to include:
+
+```bash
+coderoller-flatten-repo /path/to/reponame --interactive
+# or use the short form
+coderoller-flatten-repo /path/to/reponame -i
+```
+
+When using interactive mode, you'll be presented with a list of all files and directories in the repository. You can navigate through them with the arrow keys and select/deselect items using the space bar. All items are selected by default.
+
+### Interactive Mode Controls
+
+- **↑/↓**: Navigate up and down through the file list
+- **Space**: Toggle selection of the current item
+- **A**: Select all items
+- **U**: Unselect all items
+- **Enter**: Confirm your selection and proceed with flattening
+- **Esc**: Cancel and exit
 
 These commands will create a markdown file named `reponame.flat.md` in the current working directory, containing the flattened contents of the repository.
 

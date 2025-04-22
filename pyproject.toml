@@ -2,16 +2,16 @@
 name = "coderoller"
 version = "0.4.3"
 description = "A collection of tools to flatten and process code repositories"
-authors = [
-    {name = "B.T. Franklin", email = "brandon.franklin@gmail.com"},
-]
+authors = [{ name = "B.T. Franklin", email = "brandon.franklin@gmail.com" }]
 dependencies = [
     "gitpython>=3.1.43",
     "pathspec>=0.12.1",
+    "rich>=13.7.0",
+    "prompt_toolkit>=3.0.24",
 ]
 requires-python = ">=3.10"
 readme = "README.md"
-license = {text = "MIT"}
+license = { text = "MIT" }
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
@@ -45,10 +45,7 @@ distribution = true
 excludes = ["tests/**"]
 
 [tool.pdm.dev-dependencies]
-dev = [
-    "pytest>=8.3.4",
-    "flake8>=7.1.1",
-]
+dev = ["pytest>=8.3.4", "flake8>=7.1.1"]
 
 [project.scripts]
 coderoller-flatten-repo = "coderoller.flatten_repo:main"
