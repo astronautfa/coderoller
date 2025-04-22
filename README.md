@@ -13,6 +13,7 @@ Coderoller is a Python utility that flattens a source code repository into a sin
 - **Automatically includes README** files if present, placing it at the start of the flattened file.
 - **Excludes hidden files and directories** (those starting with a dot), specific directories (`build`, `dist`, `node_modules`, `__pycache__`), specific files (lockfiles, hidden files, other flattened files, etc.), and any paths specified in `.gitignore`.
 - **Supports flattening directly from Git URLs** even if the repository is not cloned locally.
+- **Provides a structure-only option** that shows just the folder structure without file contents.
 
 ## Installation
 
@@ -40,7 +41,13 @@ To flatten a source repository directly from a Git URL, use the coderoller-flatt
 coderoller-flatten-repo https://github.com/username/reponame.git
 ```
 
-Both commands will create a markdown file named `reponame.flat.md` in the current working directory, containing the flattened contents of the repository.
+To show only the folder structure without file contents:
+
+```bash
+coderoller-flatten-repo /path/to/reponame --structure-only
+```
+
+These commands will create a markdown file named `reponame.flat.md` in the current working directory, containing the flattened contents of the repository.
 
 ## License
 
