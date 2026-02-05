@@ -25,6 +25,7 @@ FILE_TYPES = {
     ".json": "json",
     ".toml": "toml",
     ".md": "markdown",
+    ".mdx": "markdown",
     ".yaml": "yaml",
     ".yml": "yaml",
     ".conf": "config",
